@@ -23,7 +23,6 @@ programa: linea programa
 linea: '\n' 
 ;  
 linea: importar '\n'    {
-                            printf("linea: %s", $1);
                             //formato: importar "C:/Users/erick/Desktop/1.jpg"
                             entro++;
                             python=fopen("programa.py","w");
@@ -32,7 +31,7 @@ linea: importar '\n'    {
                             fprintf(python, "import numpy as np\n");
                             fprintf(python, "entrada = %s \n", $1);
                             fprintf(python, "try:\n");
-                            fprintf(python, "\timg0 = Image.open(entrada)\n") ;  //falta stack                          
+                            fprintf(python, "\timg0 = Image.open(entrada)\n") ;                          
                             fprintf(python, "except:\n");
                             fprintf(python, "\tprint(\"no se puedo cargar la imagen\")\n");
                             fprintf(python, "\tsys.exit(1)\n");
@@ -42,7 +41,7 @@ linea: importar '\n'    {
                             fprintf(python, "img1 = img.copy()\n");      
                         }
 ;
-linea: funcion '\n'  {printf("entramos a una funcion\n");}
+linea: funcion '\n'  { }
 ;
 linea: exportar '\n'    {
                             fprintf(python, "salida = %s \n", $1);
@@ -66,7 +65,6 @@ linea: SALIDA '\n'      {
 ;
 importar: IMPORTAR UBICACIONE   {   
                                     $$=$2;
-                                    printf("importar, $2: %s", $2);
                                 }
 ;
 funcion: IMG '.' ROTAR  {
@@ -119,6 +117,5 @@ fprintf(python, "i=0\n");
 ; 
 exportar: EXPORTAR UBICACIONS   {
                                     $$=$2;
-                                    printf("exportar, $2: %s", $2);
                                 }
 %% /*auxiliares*/
