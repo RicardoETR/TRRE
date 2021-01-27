@@ -13,7 +13,7 @@ img "IMAGEN"|"imagen"|"img"|"IMG"
 salir   "salir"|"SALIR"|"exit"|"EXIT"
 archivo {cadena}{punto}{formato}
 ubicacione {comillas}({letras}{dospuntos}({diagonal}{cadena})*{diagonal})*{archivo}{comillas}
-ubicacions ({comillas}{comillas})|({comillas}{letras}{dospuntos}({dospuntos}{cadena})*{diagonal}{comillas})
+ubicacions ({comillas}{comillas})|({comillas}{letras}{dospuntos}({diagonal}{cadena})*{diagonal}{comillas})
 rotar "rotar"|"ROTAR"|"ROTATE"|"rotate"
 escalagrises "EG"|"eg"|"gs"|"GS"
 negativo "negativo"|"NEGATIVO"|"negative"|"NEGATIVE"
